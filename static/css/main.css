@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-offwhite: #EEEEEE;
+  --color-blueink: #3A4F97;
+  --color-bermuda: #78dcca;
+}

@@ -1,0 +1,19 @@
+{{define "posts"}}
+<div class="my-8">
+	<h3 class="font-bold text-blueink text-2xl my-4">Posts</h3>
+
+	<ul class="border-l border-l-blueink pl-2 flex flex-col space-y-2 text-lg">
+
+		{{range .Posts}}
+		<li>
+			<a href="/posts/{{.Slug}}"  class="flex justify-between relative group">
+				<p class="bg-offwhite z-50 pr-4 group-hover:font-semibold">{{.Title}}</p>
+				<p class="z-0 border-b-2 border-dashed absolute w-full h-1/2 top-1 border-b-neutral-300 group-hover:border-b-blueink group-hover:border-solid"></p>
+				<p class="bg-offwhite z-50 pl-4 group-hover:font-semibold">{{.Created}}</p>
+			</a>
+		</li>
+		{{end}}
+		
+	</ul>
+</div>
+{{end}}
