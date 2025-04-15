@@ -19,10 +19,17 @@ type PostSummaries []PostSummary
 
 type Image struct {
 	Image 	 string
+	Alt 	 string
 }
 
 type Images []Image
 
 type RichText struct {
 	RichText string
+}
+
+type Page struct {
+	Page        string
+	RichText    string
+	Description string
 }

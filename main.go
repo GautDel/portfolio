@@ -16,23 +16,22 @@ func main() {
 
   err := godotenv.Load()
   if err != nil {
-    log.Fatal("Error loading .env file")
+	  log.Fatal("Error loading .env file")
   }
 
-
-
 	app := pocketbase.New()
-
-
 
 	app.OnServe().BindFunc(func(se *core.ServeEvent) error {
 
 		registry := template.NewRegistry()
-		// serves static files from the provided dir (if exists)
 		se.Router.GET("/static/{path...}", apis.Static(os.DirFS("./static"), false))
 
 		se.Router.GET("/", func(e *core.RequestEvent) error {
 			return handlers.IndexHandler(app, registry, e)
+		})
+
+		se.Router.GET("/robots.txt", func(e *core.RequestEvent) error {
+			return handlers.RobotsHandler(registry, e)
 		})
 
 		se.Router.GET("/about", func(e *core.RequestEvent) error {

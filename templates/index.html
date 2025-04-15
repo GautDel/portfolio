@@ -3,15 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Free Web tutorials">
 		<title>GautDel</title>
 		<link href="./static/css/output.css" rel="stylesheet">
 	</head>
-	<body class="bg-offwhite">
+	<body>
 		<main class="p-2 max-w-4xl mx-auto pt-8">
 
 			<div class="flex items-center space-x-4">
 				<div class="w-24 h-24">
-    				<img class="w-full h-full object-cover object-top" src="{{.Image.Image}}" />
+					<img class="w-full h-full object-cover object-top" src="{{.Image.Image}}" alt="{{.Image.Alt}}" />
 				</div>
 				<div class="flex flex-col">
 					<div class="flex items-center">

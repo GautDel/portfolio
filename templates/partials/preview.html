@@ -1,18 +1,26 @@
 {{define "preview"}}
 <div>
 	<ul class="flex flex-wrap gap-8">
-  <li class="w-1/3 h-64 rounded-md overflow-hidden flex items-center justify-center grow">
-    <img class="w-full h-full object-cover object-top" src="{{(index .Images 0).Image}}" />
-  </li>
-  <li class="w-1/3 h-64 rounded-md overflow-hidden flex items-center justify-center grow md:grow-0">
-    <img class="w-full h-full object-cover object-top" src="{{(index .Images 1).Image}}" />
-  </li>
-  <li class="w-1/3 h-64 rounded-md overflow-hidden flex items-center justify-center grow md:grow-0">
-    <img class="w-full h-full object-cover object-top" src="{{(index .Images 2).Image}}" />
-  </li>
+		<li class="w-1/3 h-64 rounded-md overflow-hidden flex items-center justify-center grow">
+			<a class="w-full h-full" href="http://www.chess.com" target="_blank">
+				<img class="w-full h-full object-cover object-top" src="{{(index .Images 0).Image}}" alt="{{(index .Images 0).Alt}}"/>
+			</a>
+		</li>
+		<li class="w-1/3 h-64 rounded-md overflow-hidden flex items-center justify-center grow md:grow-0">
+			<a class="w-full h-full" href="http://www.chess.com" target="_blank">
+				<img class="w-full h-full object-cover object-top" src="{{(index .Images 1).Image}}" alt="{{(index .Images 1).Alt}}"/>
+			</a>
+		</li>
+		<li class="w-1/3 h-64 rounded-md overflow-hidden flex items-center justify-center grow md:grow-0">
+			<a class="w-full h-full" href="http://www.chess.com" target="_blank">
+				<img class="w-full h-full object-cover object-top" src="{{(index .Images 2).Image}}" alt="{{(index .Images 2).Alt}}"/>
+			</a>
+		</li>
 
-  <li class="w-1/3 h-64 rounded-md overflow-hidden flex items-center justify-center grow">
-    <img class="w-full h-full object-cover object-top" src="{{(index .Images 3).Image}}" />
+		<li class="w-1/3 h-64 rounded-md overflow-hidden flex items-center justify-center grow">
+			<a class="w-full h-full" href="http://www.chess.com" target="_blank">
+				<img class="w-full h-full object-cover object-top" src="{{(index .Images 3).Image}}" alt="{{(index .Images 3).Alt}}"/>
+			</a>
   </li>
 	</ul>
 </div>

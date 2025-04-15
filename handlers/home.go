@@ -104,6 +104,7 @@ func getHomeImage(app *pocketbase.PocketBase) (Image, error) {
 
 	image := Image{
 		Image: fullPath,
+		Alt: record.GetString("alt"),
 	}
 
 	return image, nil
@@ -132,6 +133,7 @@ func getPreviewImages(app *pocketbase.PocketBase) (Images, error) {
 
 		image := Image{
 			Image: fullPath,
+			Alt: record.GetString("alt"),
 		}
 
 		images = append(images, image)

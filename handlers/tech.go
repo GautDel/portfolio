@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/pocketbase/pocketbase"
@@ -13,17 +12,17 @@ func TechHandler(registry *template.Registry, e *core.RequestEvent, app *pocketb
 
 	record, err := getRichText(app, "dp8a14u8sz15a70")
 
-	log.Println(record)
-
-	richText := RichText{
+	page := Page{
+		Page: record.GetString("page"),
 		RichText: record.GetString("richtext"),
+		Description: record.GetString("description"),
 	}
 
 	html, err := registry.LoadFiles(
 		"templates/tech.html",
 		"templates/partials/home_button.html",
 		"templates/partials/footer.html",
-	).Render(richText)
+	).Render(page)
 
 	if err != nil {
 		// or redirect to a dedicated 404 HTML page

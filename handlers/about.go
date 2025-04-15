@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/pocketbase/pocketbase"
@@ -13,7 +12,6 @@ func AboutHandler(registry *template.Registry, e *core.RequestEvent, app *pocket
 
 	record, err := getRichText(app, "887p6l7g1s2z71k")
 
-	log.Println(record)
 
 	richText := RichText{
 		RichText: record.GetString("richtext"),
@@ -27,7 +25,7 @@ func AboutHandler(registry *template.Registry, e *core.RequestEvent, app *pocket
 
 	if err != nil {
 		// or redirect to a dedicated 404 HTML page
-		return e.NotFoundError("", err)
+		return e.NotFoundError("test", err)
 	}
 
 	return e.HTML(http.StatusOK, html)
